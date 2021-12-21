@@ -1,4 +1,5 @@
-# BlockMixer
+# BlockMixer • Fabric Mod
+
 This mod is designed to ease the building process.
 
 ## Progress **~40%**
