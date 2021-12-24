@@ -20,7 +20,7 @@ To clear the mixing list type `/bm clear`.
 After you put the block, the mod chooses a random slot from your chosen to mixing slots and automatically switches your character's selection to it.
 
 ## Features
-**Cooming soon**
+**Coming soon**
 
 ## How to use
-**Cooming soon**
+**Coming soon**
