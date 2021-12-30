@@ -1,0 +1,7 @@
+{
+    "key.blockmixer.addslot": "Добавить/удалить слотъ горячей панѣли",
+    "commands.blockmixer.addslot": "Слотъ %d добавлѣнъ",
+    "commands.blockmixer.alreadyaddedslot": "ужѣ добавлѣнъ!",
+    "commands.blockmixer.clearslot": "BlockMixer очищенъ",
+    "commands.blockmixer.removeslot": "Слотъ %d удалён"
+}

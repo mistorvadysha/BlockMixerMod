@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "",
-    "sources": ""
+    "sources": "https://github.com/mistorvadysha/BlockMixerMod"
   },
 
   "license": "CC0-1.0",
@@ -20,7 +20,11 @@
   "entrypoints": {
     "main": [
       "com.nssg.blockmixer.BlockMixer"
-    ]
+    ],
+     "client": [
+      "com.nssg.blockmixer.BlockMixerClient",
+      "com.nssg.blockmixer.SlotStatus"
+     ]
   },
   "mixins": [
     "nssgs-blockmixer.mixins.json"

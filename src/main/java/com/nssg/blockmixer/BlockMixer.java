@@ -6,8 +6,6 @@ import java.util.Random;
 import com.nssg.blockmixer.command.BmAddCommand;
 import com.nssg.blockmixer.command.BmClearCommand;
 
-// import com.nssg.blockmixer.util.ModCommandRegister;
-
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.entity.LivingEntity;
@@ -25,13 +23,12 @@ public class BlockMixer implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        // ModCommandRegister.RegisterCommands();
         BmAddCommand.register(null, false);
         BmClearCommand.register(null, false);
     }
 
     public static boolean SlotsSettings(int slot, boolean isEnabled) {
-        if (hotbarSlots[slot] != isEnabled){
+        if (hotbarSlots[slot] != isEnabled) {
             hotbarSlots[slot] = isEnabled;
             hotbarSlotsInt.add(slot);
             
@@ -41,6 +38,17 @@ public class BlockMixer implements ModInitializer {
         return false;
     }
 
+    public static void SlotRemove(int slot) {
+        hotbarSlots[slot] = false;
+        // hotbarSlotsInt.remove(slot);
+        for (int i = 0; i < hotbarSlotsInt.size(); i++) {
+            System.out.printf("\n[i: %d] [%d] [slot: %d]\n", i, hotbarSlotsInt.get(i), slot);
+            if (hotbarSlotsInt.get(i) == slot) { hotbarSlotsInt.remove(Integer.valueOf(slot)); }
+        }
+        if (hotbarSlotsInt.isEmpty()) { toggleMod = false; }
+    }
+    
+
     public static void SwtichSlot(LivingEntity placer) {
         PlayerEntity self = (PlayerEntity) (Object) placer;
         if ((self.getWorld().toString() == "ClientLevel") && (toggleMod == true))
@@ -48,8 +56,7 @@ public class BlockMixer implements ModInitializer {
             int index = random.nextInt(hotbarSlotsInt.size());
             self.getInventory().selectedSlot = hotbarSlotsInt.get(index);
             //
-            System.out.println("Selected hotbar slot number " + (index+1)); 
+            //System.out.println("Selected hotbar slot number " + (index+1)); 
         }
     }
-
 }

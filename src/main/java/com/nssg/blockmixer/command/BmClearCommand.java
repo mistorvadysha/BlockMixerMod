@@ -9,7 +9,7 @@ import com.nssg.blockmixer.BlockMixer;
 
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 
 public class BmClearCommand {
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher, boolean dedicated)
@@ -23,7 +23,7 @@ public class BmClearCommand {
         BlockMixer.toggleMod = false;
         BlockMixer.hotbarSlots = new boolean[] {false, false, false, false, false, false, false, false, false};
         BlockMixer.hotbarSlotsInt = new ArrayList<>();
-        context.getSource().sendFeedback(new LiteralText("BlockMixer now is empty"));
+        context.getSource().sendFeedback(new TranslatableText("commands.blockmixer.clearslot"));
         return 1;
     }
 }

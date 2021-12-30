@@ -7,7 +7,7 @@ import com.nssg.blockmixer.BlockMixer;
 
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 
 public class BmAddCommand 
 {
@@ -20,9 +20,9 @@ public class BmAddCommand
     public static int run(CommandContext<FabricClientCommandSource> context) throws CommandSyntaxException
     {
         int slot = context.getSource().getPlayer().getInventory().selectedSlot;
-        System.out.println(slot);
-        if (BlockMixer.SlotsSettings(slot, true)) { context.getSource().sendFeedback(new LiteralText("Succsessfully added slot " + (slot+1))); }
-        else { context.getSource().sendFeedback(new LiteralText((slot+1) + " is already added!")); }
+        //System.out.println(slot);
+        if (BlockMixer.SlotsSettings(slot, true)) { context.getSource().sendFeedback(new TranslatableText("commands.blockmixer.addslot", (slot+1))); }
+        else { context.getSource().sendFeedback(new TranslatableText((slot+1) + " " + "commands.blockmixer.alreadyaddedslot")); }
         return 1;
     }
 
