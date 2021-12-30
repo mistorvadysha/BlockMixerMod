@@ -1,9 +1,26 @@
-# Fabric Example Mod
+# BlockMixer • Fabric Mod
 
-## Setup
+**Description**
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+This mod is designed to ease the building process.
 
-## License
+**Requirements**
+- [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.18.X
+- [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files) 0.44.0+1.18
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## Progress **~40%**
+
+These solutions are temporary and will be tweaked better in future releases.
+
+To include a hotbar slot in the mixing list type `/bm add` with the selected slot in the hotbar.
+To clear the mixing list type `/bm clear`.
+
+## How it works
+
+After you put the block, the mod chooses a random slot from your chosen to mixing slots and automatically switches your character's selection to it.
+
+## Features
+**Coming soon**
+
+## How to use
+**Coming soon**
