@@ -1,7 +1,7 @@
 {
-    "key.blockmixer.addslot": "Добавить/удалить слотъ горячей панѣли",
-    "commands.blockmixer.addslot": "Слотъ %d добавлѣнъ",
-    "commands.blockmixer.alreadyaddedslot": "ужѣ добавлѣнъ!",
+    "key.blockmixer.addslot": "Добавить/удалить ячейку горячей панѣли",
+    "commands.blockmixer.addslot": "Ячейка %d добавлѣна",
+    "commands.blockmixer.alreadyaddedslot": "ужѣ добавлѣна!",
     "commands.blockmixer.clearslot": "BlockMixer очищенъ",
-    "commands.blockmixer.removeslot": "Слотъ %d удалён"
+    "commands.blockmixer.removeslot": "Ячейка %d удалѣна"
 }
