@@ -3,5 +3,10 @@
     "commands.blockmixer.addslot": "Ячейка %d добавлѣна",
     "commands.blockmixer.alreadyaddedslot": "ужѣ добавлѣна!",
     "commands.blockmixer.clearslot": "BlockMixer очищенъ",
-    "commands.blockmixer.removeslot": "Ячейка %d удалѣна"
+    "commands.blockmixer.removeslot": "Ячейка %d удалѣна",
+
+    "title.blockmixer.config": "Настройки BlockMixer",
+    "category.blockmixer.general": "Основные настройки",
+    "option.blockmixer.mixmode": "Рѣжимъ BlockMixer",
+    "option.blockmixer.mixmode.tooltip": "Default: случайный выборъ ячеякъ\nNon-repeating: ячейка не можѣтъ быть выбрана два раза подрядъ\nNon-repeating [2]: ячейка не можѣтъ быть выбрана три раза подрядъ"
 }

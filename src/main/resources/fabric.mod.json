@@ -4,12 +4,13 @@
   "version": "${version}",
 
   "name": "BlockMixer",
-  "description": "A mod that automatically chooses the next random block from your hotbar to build",
+  "description": "A mod that automatically chooses the next random block from your hotbar to build.",
   "authors": [
     "NSSG"
   ],
   "contact": {
-    "homepage": "",
+    "issues": "https://github.com/mistorvadysha/BlockMixerMod/issues",
+    "homepage": "https://github.com/mistorvadysha/BlockMixerMod",
     "sources": "https://github.com/mistorvadysha/BlockMixerMod"
   },
 
@@ -24,7 +25,10 @@
      "client": [
       "com.nssg.blockmixer.BlockMixerClient",
       "com.nssg.blockmixer.SlotStatus"
-     ]
+    ],
+     "modmenu": [
+      "com.nssg.blockmixer.config.ModMenuIntegration"
+  ]
   },
   "mixins": [
     "nssgs-blockmixer.mixins.json"

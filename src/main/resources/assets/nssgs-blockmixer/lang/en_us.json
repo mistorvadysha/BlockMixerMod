@@ -1,7 +1,13 @@
 {
     "key.blockmixer.addslot": "Add/remove hotbar slot",
+
     "commands.blockmixer.addslot": "Added slot %d",
     "commands.blockmixer.alreadyaddedslot": "is already added!",
     "commands.blockmixer.clearslot": "BlockMixer now is empty",
-    "commands.blockmixer.removeslot": "Slot %d removed"
+    "commands.blockmixer.removeslot": "Slot %d removed",
+
+    "title.blockmixer.config": "BlockMixer options",
+    "category.blockmixer.general": "Main settings",
+    "option.blockmixer.mixmode": "Mix Mode",
+    "option.blockmixer.mixmode.tooltip": "Default: random selection of slots\nNon-repeating: slot cannot be repeated twice in a row\nNon-repeating [2]: the slot cannot be repeated three times in a row"
 }

@@ -2,6 +2,10 @@ package com.nssg.blockmixer;
 
 import net.minecraft.client.option.KeyBinding;
 
+import java.io.IOException;
+
+import com.nssg.blockmixer.config.JsonManager;
+
 import org.lwjgl.glfw.GLFW;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -16,6 +20,8 @@ public class BlockMixerClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        try { JsonManager.Load(); } catch (IOException e) { e.printStackTrace(); }
+
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
             "key.blockmixer.addslot", 
             InputUtil.Type.KEYSYM, 
