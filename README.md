@@ -1,4 +1,4 @@
-# BlockMixer • Fabric Mod • Progress **~75%**
+# BlockMixer • Fabric Mod • Progress **~80%**
 
 
 **Description**  
