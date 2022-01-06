@@ -1,4 +1,4 @@
-# BlockMixer • Fabric Mod • Progress **~65%**
+# BlockMixer • Fabric Mod • Progress **~75%**
 
 
 **Description**  
@@ -12,10 +12,12 @@ After you put the block, the mod chooses a random slot from your chosen to mixin
 
 **Requirements**
 - [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.18.X
-- [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files) 0.44.0+1.18
+- [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files) 0.44.0+1.18 +
+- [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files) v6.1.48 +
 
 ## Features
-**Coming soon**
+- different mixing modes  
+  (**Default**: random selection of slots, **Non-repeating**: slot cannot be repeated twice in a row, **Non-repeating [2]**: the slot cannot be repeated three times in a row)
 
 ## How to use
 
