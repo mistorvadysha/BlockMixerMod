@@ -1,11 +1,10 @@
 package com.nssg.blockmixer.command;
 
-import java.util.ArrayList;
-
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.nssg.blockmixer.BlockMixer;
+import com.nssg.blockmixer.SlotSwitcher;
+import com.nssg.blockmixer.config.ConfigManager;
 
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
@@ -20,10 +19,10 @@ public class BmClearCommand {
 
     public static int run(CommandContext<FabricClientCommandSource> context) throws CommandSyntaxException
     {
-        BlockMixer.toggleMod = false;
-        BlockMixer.hotbarSlots = new boolean[] {false, false, false, false, false, false, false, false, false};
-        BlockMixer.hotbarSlotsInt = new ArrayList<>();
-        context.getSource().sendFeedback(new TranslatableText("commands.blockmixer.clearslot"));
+        SlotSwitcher.ClearSlots();
+        if (ConfigManager.configJSON.getChatNotifications()) {
+            context.getSource().sendFeedback(new TranslatableText("commands.blockmixer.clearslot"));
+        }
         return 1;
     }
 }

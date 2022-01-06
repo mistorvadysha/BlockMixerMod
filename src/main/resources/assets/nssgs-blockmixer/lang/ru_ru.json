@@ -1,5 +1,6 @@
 {
     "key.blockmixer.addslot": "Добавить/удалить слот хотбара",
+    
     "commands.blockmixer.addslot": "Слот %d добавлен",
     "commands.blockmixer.alreadyaddedslot": "уже добавлен!",
     "commands.blockmixer.clearslot": "BlockMixer очищен",
@@ -8,5 +9,6 @@
     "title.blockmixer.config": "Настройки BlockMixer",
     "category.blockmixer.general": "Основные настройки",
     "option.blockmixer.mixmode": "Режим BlockMixer",
-    "option.blockmixer.mixmode.tooltip": "Default: случайный выбор слотов\nNon-repeating: слот не может быть выбран два раза подряд\nNon-repeating [2]: слот не может быть выбран три раза подряд"
+    "option.blockmixer.mixmode.tooltip": "Default: случайный выбор слотов\nNon-repeating: слот не может быть выбран два раза подряд\nNon-repeating [2]: слот не может быть выбран три раза подряд",
+    "option.blockmixer.chatnotifications": "Уведомления в чате"
 }

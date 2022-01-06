@@ -8,6 +8,7 @@
 
     "title.blockmixer.config": "BlockMixer options",
     "category.blockmixer.general": "Main settings",
-    "option.blockmixer.mixmode": "Mix Mode",
-    "option.blockmixer.mixmode.tooltip": "Default: random selection of slots\nNon-repeating: slot cannot be repeated twice in a row\nNon-repeating [2]: the slot cannot be repeated three times in a row"
+    "option.blockmixer.mixmode": "Mixing Mode",
+    "option.blockmixer.mixmode.tooltip": "Default: random selection of slots\nNon-repeating: slot cannot be repeated twice in a row\nNon-repeating [2]: the slot cannot be repeated three times in a row",
+    "option.blockmixer.chatnotifications": "Chat Notifications"
 }

@@ -1,12 +1,13 @@
 package com.nssg.blockmixer.config;
 
 public class Config {
-    private String settingMixMode;
+    private String settingMixMode = "Default";
+    private boolean settingChatNotifications = false;
 
-    public String getSettingMixMode() {
-        return settingMixMode;
-    }
-    public void setSettingMixMode(String settingMixMode) {
-        this.settingMixMode = settingMixMode;
-    }
+    //settingMixMode
+    public String getMixMode() { return settingMixMode; }
+    public void setMixMode(String settingMixMode) { this.settingMixMode = settingMixMode; }
+
+    public boolean getChatNotifications() { return settingChatNotifications; }
+    public void setChatNotifications(Boolean settingChatNotifications) { this.settingChatNotifications = settingChatNotifications; }
 }

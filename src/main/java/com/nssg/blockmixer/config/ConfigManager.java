@@ -11,13 +11,13 @@ import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.nssg.blockmixer.BlockMixer;
+import com.nssg.blockmixer.BlockMixerClient;
 
 import net.fabricmc.loader.api.FabricLoader;
 
-public class JsonManager {
+public class ConfigManager {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final Path configPath = FabricLoader.getInstance().getConfigDir().resolve(BlockMixer.MOD_ID + ".json");
+    private static final Path configPath = FabricLoader.getInstance().getConfigDir().resolve(BlockMixerClient.MOD_ID + ".json");
     
     public static Config configJSON;
     
@@ -28,7 +28,6 @@ public class JsonManager {
             String configString = reader.lines().collect(Collectors.joining());
             reader.close();
             configJSON = GSON.fromJson(configString, Config.class);
-            System.out.println(configJSON.getSettingMixMode());
         }
 
         catch (IOException e) {
@@ -42,7 +41,8 @@ public class JsonManager {
     }
 
     public static void SetDefaults(Config config) {
-        config.setSettingMixMode("Default");
+        config.setMixMode("Default");
+        config.setChatNotifications(false);
     }
 
     public static void RewriteConfig() {

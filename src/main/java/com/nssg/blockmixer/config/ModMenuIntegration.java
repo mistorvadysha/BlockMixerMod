@@ -21,20 +21,25 @@ public class ModMenuIntegration implements ModMenuApi{
                 .setTitle(new TranslatableText("title.blockmixer.config"));
 
             builder.setSavingRunnable(() -> {
-                JsonManager.RewriteConfig();
+                ConfigManager.RewriteConfig();
             });
 
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
             ConfigCategory general = builder
                 .getOrCreateCategory(new TranslatableText("category.blockmixer.general"))
-        
-                .addEntry(entryBuilder.startSelector(new TranslatableText("option.blockmixer.mixmode"), modeList, JsonManager.configJSON.getSettingMixMode())
+
+                .addEntry(entryBuilder.startSelector(new TranslatableText("option.blockmixer.mixmode"), modeList, ConfigManager.configJSON.getMixMode())
                 .setDefaultValue("Default")
                 .setTooltip(new TranslatableText("option.blockmixer.mixmode.tooltip"))
-                .setSaveConsumer(newValue -> JsonManager.configJSON.setSettingMixMode(newValue))
+                .setSaveConsumer(newValue -> ConfigManager.configJSON.setMixMode(newValue))
+                .build())
+
+                .addEntry(entryBuilder.startBooleanToggle(new TranslatableText("option.blockmixer.chatnotifications"), ConfigManager.configJSON.getChatNotifications())
+                .setDefaultValue(false)
+                .setSaveConsumer(newValue -> ConfigManager.configJSON.setChatNotifications(newValue))
                 .build());
-                
+   
             return builder.build();
         };
     }

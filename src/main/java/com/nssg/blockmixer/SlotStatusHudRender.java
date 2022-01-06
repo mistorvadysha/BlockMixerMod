@@ -9,8 +9,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.client.gui.hud.InGameHud;
 
-public class SlotStatus implements ClientModInitializer, HudRenderCallback {
-    private static final Identifier TEXTURE_ID = new Identifier(BlockMixer.MOD_ID, "textures/iconmini.png");
+public class SlotStatusHudRender implements ClientModInitializer, HudRenderCallback {
+    private static final Identifier TEXTURE_ID = new Identifier(BlockMixerClient.MOD_ID, "textures/iconmini.png");
 	private static int windowX;
 	private static int windowY;
 	private static final int resX = 10;
@@ -28,8 +28,9 @@ public class SlotStatus implements ClientModInitializer, HudRenderCallback {
         RenderSystem.setShaderTexture(0, TEXTURE_ID);
 		windowX = MinecraftClient.getInstance().getWindow().getScaledWidth();
 		windowY = MinecraftClient.getInstance().getWindow().getScaledHeight();
-		for (int i=0; i<BlockMixer.hotbarSlots.length; i++){
-			if (BlockMixer.hotbarSlots[i]) { InGameHud.drawTexture(matrixStack, windowX/2-resX/2-2+slotSize[i], windowY-18, 0, 1, 1, resX-1, resY-1, resX, resY); }
+		
+		for (int i=0; i<SlotSwitcher.hotbarSlotsState.length; i++){
+			if (SlotSwitcher.hotbarSlotsState[i]) { InGameHud.drawTexture(matrixStack, windowX/2-resX/2-2+slotSize[i], windowY-18, 0, 1, 1, resX-1, resY-1, resX, resY); }
 		}
 	}
 }
