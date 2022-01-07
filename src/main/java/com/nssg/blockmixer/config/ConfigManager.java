@@ -19,41 +19,40 @@ public class ConfigManager {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Path configPath = FabricLoader.getInstance().getConfigDir().resolve(BlockMixerClient.MOD_ID + ".json");
     
-    public static Config configJSON;
-    
+    public static Config config;
+
     public static void Load() throws IOException {
-        Config config = new Config();
+        config = new Config();
         
-        try (BufferedReader reader = new BufferedReader(new FileReader(configPath.toString()))) {
+        // Read config file and save data to Config "config"
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(configPath.toString()));
             String configString = reader.lines().collect(Collectors.joining());
             reader.close();
-            configJSON = GSON.fromJson(configString, Config.class);
+            config = GSON.fromJson(configString, Config.class);
         }
 
+        // Create a new "nssgs-blockmixer.json file if it doesn't exist"
         catch (IOException e) {
-            SetDefaults(config);
-            Files.createFile(configPath);
-            BufferedWriter writer = new BufferedWriter(new FileWriter(configPath.toFile()));
-            String configString = GSON.toJson(config);
-            writer.write(configString);
-            writer.close();
+            CreateConfigFile(config);
+
+            Load();
         }   
     }
 
-    public static void SetDefaults(Config config) {
-        config.setMixMode("Default");
-        config.setChatNotifications(false);
+    private static void CreateConfigFile(Config config) throws IOException {
+        Files.createFile(configPath);
+        Save();
     }
 
-    public static void RewriteConfig() {
+    public static void Save() {
         try {
+            String configString = GSON.toJson(config);
+
             BufferedWriter writer = new BufferedWriter(new FileWriter(configPath.toFile()));
-            String configString = GSON.toJson(configJSON);
             writer.write(configString);
             writer.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+        catch (IOException e) { e.printStackTrace(); }
     }
 }

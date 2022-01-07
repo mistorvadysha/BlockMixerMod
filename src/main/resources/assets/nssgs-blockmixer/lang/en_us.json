@@ -1,10 +1,11 @@
 {
-    "key.blockmixer.addslot": "Add/remove hotbar slot",
+    "key.blockmixer.toggleslot": "Toggle hotbar slot",
 
     "commands.blockmixer.addslot": "Added slot %d",
     "commands.blockmixer.alreadyaddedslot": "is already added!",
     "commands.blockmixer.clearslot": "BlockMixer now is empty",
     "commands.blockmixer.removeslot": "Slot %d removed",
+    "commands.blockmixer.togglebm": "BlockMixer toggled",
 
     "title.blockmixer.config": "BlockMixer options",
     "category.blockmixer.general": "Main settings",

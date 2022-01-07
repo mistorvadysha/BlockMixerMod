@@ -10,13 +10,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.client.gui.hud.InGameHud;
 
 public class SlotStatusHudRender implements ClientModInitializer, HudRenderCallback {
-    private static final Identifier TEXTURE_ID = new Identifier(BlockMixerClient.MOD_ID, "textures/iconmini.png");
+    private static final Identifier TEXTURE_ID = new Identifier(BlockMixerClient.MOD_ID, "textures/indicators.png");
+	
 	private static int windowX;
 	private static int windowY;
-	private static final int resX = 10;
-	private static final int resY = 10;
-	private static final int slotSize[] = {-80, -60, -40, -20, 0, 20, 40, 60, 80};
-
+	private static final int res = 10;
+	public static int offset = 0;
+	private static final int slotPos[] = {-80, -60, -40, -20, 0, 20, 40, 60, 80};
 
 	@Override
 	public void onInitializeClient() {
@@ -30,7 +30,7 @@ public class SlotStatusHudRender implements ClientModInitializer, HudRenderCallb
 		windowY = MinecraftClient.getInstance().getWindow().getScaledHeight();
 		
 		for (int i=0; i<SlotSwitcher.hotbarSlotsState.length; i++){
-			if (SlotSwitcher.hotbarSlotsState[i]) { InGameHud.drawTexture(matrixStack, windowX/2-resX/2-2+slotSize[i], windowY-18, 0, 1, 1, resX-1, resY-1, resX, resY); }
+			if (SlotSwitcher.hotbarSlotsState[i]) { InGameHud.drawTexture(matrixStack, windowX/2-res/2-3+slotPos[i], windowY-19, 0, offset, 0, res, res, 20, 10); }
 		}
 	}
 }

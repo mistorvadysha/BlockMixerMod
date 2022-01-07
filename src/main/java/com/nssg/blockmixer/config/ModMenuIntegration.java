@@ -21,7 +21,7 @@ public class ModMenuIntegration implements ModMenuApi{
                 .setTitle(new TranslatableText("title.blockmixer.config"));
 
             builder.setSavingRunnable(() -> {
-                ConfigManager.RewriteConfig();
+                ConfigManager.Save();
             });
 
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
@@ -29,15 +29,15 @@ public class ModMenuIntegration implements ModMenuApi{
             ConfigCategory general = builder
                 .getOrCreateCategory(new TranslatableText("category.blockmixer.general"))
 
-                .addEntry(entryBuilder.startSelector(new TranslatableText("option.blockmixer.mixmode"), modeList, ConfigManager.configJSON.getMixMode())
+                .addEntry(entryBuilder.startSelector(new TranslatableText("option.blockmixer.mixmode"), modeList, ConfigManager.config.getMixMode())
                 .setDefaultValue("Default")
                 .setTooltip(new TranslatableText("option.blockmixer.mixmode.tooltip"))
-                .setSaveConsumer(newValue -> ConfigManager.configJSON.setMixMode(newValue))
+                .setSaveConsumer(newValue -> ConfigManager.config.setMixMode(newValue))
                 .build())
 
-                .addEntry(entryBuilder.startBooleanToggle(new TranslatableText("option.blockmixer.chatnotifications"), ConfigManager.configJSON.getChatNotifications())
+                .addEntry(entryBuilder.startBooleanToggle(new TranslatableText("option.blockmixer.chatnotifications"), ConfigManager.config.getChatNotifications())
                 .setDefaultValue(false)
-                .setSaveConsumer(newValue -> ConfigManager.configJSON.setChatNotifications(newValue))
+                .setSaveConsumer(newValue -> ConfigManager.config.setChatNotifications(newValue))
                 .build());
    
             return builder.build();

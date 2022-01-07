@@ -13,9 +13,9 @@ public class SlotSwitcher {
     static Random random = new Random();
 
     public static boolean[] hotbarSlotsState = {false, false, false, false, false, false, false, false, false};
-    public static ArrayList<Integer> hotbarSlotsIDs = new ArrayList<>();
+    private static ArrayList<Integer> hotbarSlotsIDs = new ArrayList<>();
 
-    private static boolean toggleMod = false;
+    public static boolean toggleMod = false;
 
     private static int lastSlot1 = -1;
     private static int lastSlot = -1;
@@ -51,7 +51,7 @@ public class SlotSwitcher {
         if (toggleMod == true && placer.getWorld().toString() == "ClientLevel") {
             PlayerEntity self = (PlayerEntity) (Object) placer;
 
-            String settingMixMode = ConfigManager.configJSON.getMixMode();
+            String settingMixMode = ConfigManager.config.getMixMode();
             int index = random.nextInt(hotbarSlotsIDs.size());
 
             switch (settingMixMode) {

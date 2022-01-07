@@ -20,7 +20,7 @@ public class BmClearCommand {
     public static int run(CommandContext<FabricClientCommandSource> context) throws CommandSyntaxException
     {
         SlotSwitcher.ClearSlots();
-        if (ConfigManager.configJSON.getChatNotifications()) {
+        if (ConfigManager.config.getChatNotifications()) {
             context.getSource().sendFeedback(new TranslatableText("commands.blockmixer.clearslot"));
         }
         return 1;

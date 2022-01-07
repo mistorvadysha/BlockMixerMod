@@ -1,10 +1,11 @@
 {
-    "key.blockmixer.addslot": "Добавить/удалить слот хотбара",
+    "key.blockmixer.toggleslot": "Переключить слот хотбара",
     
     "commands.blockmixer.addslot": "Слот %d добавлен",
     "commands.blockmixer.alreadyaddedslot": "уже добавлен!",
     "commands.blockmixer.clearslot": "BlockMixer очищен",
     "commands.blockmixer.removeslot": "Слот %d удалён",
+    "commands.blockmixer.togglebm": "BlockMixer переключён",
 
     "title.blockmixer.config": "Настройки BlockMixer",
     "category.blockmixer.general": "Основные настройки",

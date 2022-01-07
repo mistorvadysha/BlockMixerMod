@@ -1,7 +1,8 @@
 package com.nssg.blockmixer.keybindings;
 
+import com.nssg.blockmixer.SlotStatusHudRender;
 import com.nssg.blockmixer.SlotSwitcher;
-import com.nssg.blockmixer.config.ConfigManager;
+import com.nssg.blockmixer.util.ChatNotification;
 
 import org.lwjgl.glfw.GLFW;
 
@@ -12,34 +13,36 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.TranslatableText;
 
 public class KeyBindings {
-    private static KeyBinding kbAddSlot;
+    private static KeyBinding kbToggleSlot;
+    // private static KeyBinding kbToggleBM;
 
     public static void register() {
-        kbAddSlot = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-            "key.blockmixer.addslot", 
+        kbToggleSlot = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.blockmixer.toggleslot", 
             InputUtil.Type.KEYSYM, 
             GLFW.GLFW_KEY_B, 
             "BlockMixer"
         ));
         
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (kbAddSlot.wasPressed()) {
+            while (kbToggleSlot.wasPressed()) {
                 int slot =  client.player.getInventory().selectedSlot;
 
-                if (SlotSwitcher.isSlotEnabled(slot) == false) {
-                    SlotSwitcher.AddSlot(slot);
+                if (client.player.isSneaking()) {
+                    SlotSwitcher.toggleMod = !SlotSwitcher.toggleMod;
+                    if (SlotSwitcher.toggleMod == false) { SlotStatusHudRender.offset = 10; }
+                    else { SlotStatusHudRender.offset = 0; }
+                    ChatNotification.Send(new TranslatableText("commands.blockmixer.togglebm"));
+                }
 
-                    if (ConfigManager.configJSON.getChatNotifications()) {
-                        client.player.sendMessage(new TranslatableText("commands.blockmixer.addslot", (slot+1)), false);
-                    }
+                else if (SlotSwitcher.isSlotEnabled(slot) == false) {
+                    SlotSwitcher.AddSlot(slot);
+                    ChatNotification.Send(new TranslatableText("commands.blockmixer.addslot", (slot+1)));
                     
                 }
                 else {
                     SlotSwitcher.RemoveSlot(slot);
-
-                    if (ConfigManager.configJSON.getChatNotifications()) {
-                        client.player.sendMessage(new TranslatableText("commands.blockmixer.removeslot", (slot+1)), false);
-                    }
+                    ChatNotification.Send(new TranslatableText("commands.blockmixer.removeslot", (slot+1)));
                 }
             }
         });

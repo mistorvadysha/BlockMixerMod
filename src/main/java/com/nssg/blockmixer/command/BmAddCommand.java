@@ -4,7 +4,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.nssg.blockmixer.SlotSwitcher;
-import com.nssg.blockmixer.config.ConfigManager;
+import com.nssg.blockmixer.util.ChatNotification;
 
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
@@ -25,14 +25,11 @@ public class BmAddCommand
         if (SlotSwitcher.isSlotEnabled(slot) == false) {
             SlotSwitcher.AddSlot(slot);
             
-            if (ConfigManager.configJSON.getChatNotifications()) {
-                context.getSource().sendFeedback(new TranslatableText("commands.blockmixer.addslot", (slot+1)));
-            }
+            ChatNotification.Send(new TranslatableText("commands.blockmixer.addslot", (slot+1)));
         }
-        else if (ConfigManager.configJSON.getChatNotifications()) {
-            context.getSource().sendFeedback(new TranslatableText((slot+1) + " " + "commands.blockmixer.alreadyaddedslot"));
+        else {
+            ChatNotification.Send(new TranslatableText((slot+1) + " " + "commands.blockmixer.alreadyaddedslot"));
         }
-
         return 1;
     }
 }
