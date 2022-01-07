@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # BlockMixer • Fabric Mod • Progress **~85%**
+=======
+# BlockMixer • Fabric Mod • Progress **~80%**
+>>>>>>> c0bea991d5c613d1185c69f7411b5c7748d0a540
 
 
 **Description**  
