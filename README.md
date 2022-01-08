@@ -7,7 +7,7 @@ This mod is designed to ease the building process.
 <img src="./media/gif1.gif" width="240"> <img src="./media/gif2.gif" width="240">
 
 **How it works**  
-After you put the block, the mod chooses a random slot from your chosen to mixing slots and automatically switches your character's selection to it.
+After you put the block, the mod chooses a random slot from BlockMixer's binded slots and automatically switches your character's selection to it.
 
 **Requirements**
 - [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.18.X
@@ -15,14 +15,18 @@ After you put the block, the mod chooses a random slot from your chosen to mixin
 - [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files) v6.1.48 +
 
 ## Features
-- different mixing modes  
-  (**Default**: random selection of slots, **Non-repeating**: slot cannot be repeated twice in a row, **Non-repeating [2]**: the slot cannot be repeated three times in a row)
+- Different mixing modes:  
+  **Default**: random selection of slots, **Non-repeating**: slot cannot be repeated twice in a row, **Non-repeating [2]**: the slot cannot be repeated three times in a row
 
 ## How to use
 
+**Basic usage**  
 To include and to remove a hotbar slot in the BlockMixer click `B`.
 
 <img src="./media/gif4.gif" width="240"> <img src="./media/gif3.gif" width="240">
+
+**"Toggle Mod" option**  
+This option is for disable mod without cleaning BlockMixer's binded slots. To toggle mod press "Sneak" button (`Shift` by default)  + "Toggle hotbar slot" button (`B` by default). `Shift+B`
 
 [Alternative]  
 To include a hotbar slot in the mixing list type `/bm add` with the selected slot in the hotbar. To clear the mixing list type `/bm clear`.
