@@ -16,7 +16,7 @@ After you put the block, the mod chooses a random slot from BlockMixer's binded 
 
 ## Features
 - Different mixing modes:  
-  **Default**: random selection of slots, **Non-repeating**: slot cannot be repeated twice in a row, **Non-repeating [2]**: the slot cannot be repeated three times in a row
+  **Default**: random selection of slots, **Non-repeating**: slot cannot be repeated twice in a row, **Non-repeating [2]**: the slot cannot be repeated three times in a row.
 
 ## How to use
 
