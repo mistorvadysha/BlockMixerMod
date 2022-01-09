@@ -27,6 +27,3 @@ To bind and to unbind and unbind a slot to BlockMixer click `B`. The binded slot
 This option is for disable mod without cleaning BlockMixer's binded slots. To toggle mod press "Sneak" button (`Shift` by default)  + "Toggle hotbar slot" button (`B` by default), `Shift+B`. All binded slot will be highlighted with a green indicator.
 
 <img src="./media/indguide.png" width="512">
-
-[Alternative]  
-To include a hotbar slot in the mixing list type `/bm add` with the selected slot in the hotbar. To clear the mixing list type `/bm clear`.
