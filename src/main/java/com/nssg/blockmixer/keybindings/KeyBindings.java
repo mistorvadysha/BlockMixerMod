@@ -30,8 +30,7 @@ public class KeyBindings {
 
                 if (client.player.isSneaking()) {
                     SlotSwitcher.toggleMod = !SlotSwitcher.toggleMod;
-                    if (SlotSwitcher.toggleMod == false) { SlotStatusHudRender.offset = 10; }
-                    else { SlotStatusHudRender.offset = 0; }
+                    SlotStatusHudRender.CheckToggle();
                     ChatNotification.Send(new TranslatableText("commands.blockmixer.togglebm"));
                 }
 

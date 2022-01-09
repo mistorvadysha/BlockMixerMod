@@ -4,7 +4,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.nssg.blockmixer.SlotSwitcher;
-import com.nssg.blockmixer.config.ConfigManager;
+import com.nssg.blockmixer.util.ChatNotification;
 
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
@@ -20,9 +20,7 @@ public class BmClearCommand {
     public static int run(CommandContext<FabricClientCommandSource> context) throws CommandSyntaxException
     {
         SlotSwitcher.ClearSlots();
-        if (ConfigManager.config.getChatNotifications()) {
-            context.getSource().sendFeedback(new TranslatableText("commands.blockmixer.clearslot"));
-        }
+        ChatNotification.Send(new TranslatableText("commands.blockmixer.clearslot"));
         return 1;
     }
 }
