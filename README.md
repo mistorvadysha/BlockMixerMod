@@ -13,6 +13,7 @@ After you put the block, the mod chooses a random slot from BlockMixer's binded 
 - [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.18.X
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files) 0.44.0+1.18 +
 - [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files) v6.1.48 +
+- Mod Menu
 
 ## Features
 - Different mixing modes:  
