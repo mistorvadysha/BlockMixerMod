@@ -21,12 +21,9 @@ After you put the block, the mod chooses a random slot from BlockMixer's binded 
 ## How to use
 
 **Basic usage**  
-To include and to remove a hotbar slot in the BlockMixer click `B`.
-
-<img src="./media/gif4.gif" width="240"> <img src="./media/gif3.gif" width="240">
+To bind and to unbind and unbind a slot to BlockMixer click `B`. The binded slot will be highlighted with a green indicator.
 
 **"Toggle Mod" option**  
-This option is for disable mod without cleaning BlockMixer's binded slots. To toggle mod press "Sneak" button (`Shift` by default)  + "Toggle hotbar slot" button (`B` by default). `Shift+B`
+This option is for disable mod without cleaning BlockMixer's binded slots. To toggle mod press "Sneak" button (`Shift` by default)  + "Toggle hotbar slot" button (`B` by default), `Shift+B`. All binded slot will be highlighted with a green indicator.
 
-[Alternative]  
-To include a hotbar slot in the mixing list type `/bm add` with the selected slot in the hotbar. To clear the mixing list type `/bm clear`.
+<img src="./media/indguide.png" width="512">
