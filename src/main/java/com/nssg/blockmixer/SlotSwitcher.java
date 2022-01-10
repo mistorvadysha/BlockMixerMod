@@ -24,7 +24,8 @@ public class SlotSwitcher {
         hotbarSlotsState[slot] = true;
         hotbarSlotsIDs.add(slot);
 
-        if (SlotStatusHudRender.isZeroOffset()) { toggleMod = true; }
+        if (SlotStatusHudRender.isZeroOffset() || hotbarSlotsIDs.size() == 1) { toggleMod = true; }
+        
         SlotStatusHudRender.CheckToggle();
     }
 

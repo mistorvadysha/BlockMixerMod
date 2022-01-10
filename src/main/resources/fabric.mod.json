@@ -4,9 +4,9 @@
   "version": "${version}",
 
   "name": "BlockMixer",
-  "description": "A mod that automatically chooses the next random block from your hotbar to build.",
+  "description": "This mod is designed to ease the building process.",
   "authors": [
-    "NSSG"
+    "NSSG: mistorvadysha"
   ],
   "contact": {
     "issues": "https://github.com/mistorvadysha/BlockMixerMod/issues",
