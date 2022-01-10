@@ -22,7 +22,7 @@ After you put the block, the mod chooses a random slot from BlockMixer's binded 
 ## How to use
 
 **Basic usage**  
-To bind and to unbind and unbind a slot to BlockMixer click `B`. The binded slot will be highlighted with a green indicator.
+To bind and unbind a slot to BlockMixer click `B`. The binded slot will be highlighted with a green indicator.
 
 **"Toggle Mod" option**  
 This option is for disable mod without cleaning BlockMixer's binded slots. To toggle mod press "Sneak" button (`Shift` by default)  + "Toggle hotbar slot" button (`B` by default), `Shift+B`. All binded slot will be highlighted with a green indicator.
