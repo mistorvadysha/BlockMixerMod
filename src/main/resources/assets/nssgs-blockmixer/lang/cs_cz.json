@@ -1,0 +1,15 @@
+{
+    "key.blockmixer.toggleslot": "Přepněte slot hotbaru",
+    
+    "chat.blockmixer.addslot": "Slot %d přidaný",
+    "chat.blockmixer.alreadyaddedslot": "již přidán!",
+    "chat.blockmixer.clearslot": "BlockMixer rafinovaný",
+    "chat.blockmixer.removeslot": "Slot %d odstraněn",
+    "chat.blockmixer.togglebm": "BlockMixer přepnutý",
+
+    "title.blockmixer.config": "Nastavení BlockMixer",
+    "category.blockmixer.general": "Základní nastavení",
+    "option.blockmixer.mixmode": "Režim BlockMixer",
+    "option.blockmixer.mixmode.tooltip": "Default: náhodný výběr slotů\nNon-repeating: slot nelze vybrat dvakrát za sebou\nNon-repeating [2]: slot nelze vybrat třikrát za sebou",
+    "option.blockmixer.chatnotifications": "Oznámení v chatu"
+}

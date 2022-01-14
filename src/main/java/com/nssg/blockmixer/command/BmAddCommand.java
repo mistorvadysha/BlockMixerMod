@@ -3,7 +3,7 @@ package com.nssg.blockmixer.command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.nssg.blockmixer.SlotSwitcher;
+import com.nssg.blockmixer.HotbarManager;
 import com.nssg.blockmixer.util.ChatNotification;
 
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
@@ -20,15 +20,14 @@ public class BmAddCommand
 
     public static int run(CommandContext<FabricClientCommandSource> context) throws CommandSyntaxException
     {
-        int slot = context.getSource().getPlayer().getInventory().selectedSlot;
+        int slotId = context.getSource().getPlayer().getInventory().selectedSlot;
         
-        if (SlotSwitcher.isSlotEnabled(slot) == false) {
-            SlotSwitcher.AddSlot(slot);
-            
-            ChatNotification.Send(new TranslatableText("commands.blockmixer.addslot", (slot+1)));
+        if (!HotbarManager.hotbar[slotId].getState()) {
+            HotbarManager.EditSlot(slotId, true, 1, true);
+            ChatNotification.Send(new TranslatableText("chat.blockmixer.addslot", (slotId+1)));
         }
         else {
-            ChatNotification.Send(new TranslatableText((slot+1) + " " + "commands.blockmixer.alreadyaddedslot"));
+            ChatNotification.Send(new TranslatableText((slotId+1) + " " + "chat.blockmixer.alreadyaddedslot"));
         }
         return 1;
     }

@@ -1,7 +1,7 @@
 package com.nssg.blockmixer.keybindings;
 
-import com.nssg.blockmixer.SlotStatusHudRender;
-import com.nssg.blockmixer.SlotSwitcher;
+import com.nssg.blockmixer.HotbarManager;
+import com.nssg.blockmixer.SlotStatusRender;
 import com.nssg.blockmixer.util.ChatNotification;
 
 import org.lwjgl.glfw.GLFW;
@@ -13,36 +13,73 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.TranslatableText;
 
 public class KeyBindings {
-    private static KeyBinding kbToggleSlot;
-    // private static KeyBinding kbToggleBM;
+    private static KeyBinding bindToggleSlot;
+    private static KeyBinding bindIncreaseRatio;
+    private static KeyBinding bindDecreaseRatio;
 
     public static void register() {
-        kbToggleSlot = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+        bindToggleSlot = KeyBindingHelper.registerKeyBinding(new KeyBinding(
             "key.blockmixer.toggleslot", 
             InputUtil.Type.KEYSYM, 
             GLFW.GLFW_KEY_B, 
             "BlockMixer"
         ));
+
+        bindIncreaseRatio = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.blockmixer.increaseratio", 
+            InputUtil.Type.KEYSYM, 
+            GLFW.GLFW_KEY_RIGHT_BRACKET, 
+            "BlockMixer"
+        ));
+
+        bindDecreaseRatio = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.blockmixer.decreaseratio", 
+            InputUtil.Type.KEYSYM, 
+            GLFW.GLFW_KEY_LEFT_BRACKET, 
+            "BlockMixer"
+        ));
         
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (kbToggleSlot.wasPressed()) {
-                int slot =  client.player.getInventory().selectedSlot;
+            while (bindToggleSlot.wasPressed()) {
+                int slotId =  client.player.getInventory().selectedSlot;
 
                 if (client.player.isSneaking()) {
-                    SlotSwitcher.toggleMod = !SlotSwitcher.toggleMod;
-                    SlotStatusHudRender.CheckToggle();
-                    ChatNotification.Send(new TranslatableText("commands.blockmixer.togglebm"));
+                    HotbarManager.toggleMod = !HotbarManager.toggleMod;
+                    SlotStatusRender.CheckToggle();
+                    ChatNotification.Send(new TranslatableText("chat.blockmixer.togglebm"));
                 }
 
-                else if (SlotSwitcher.isSlotEnabled(slot) == false) {
-                    SlotSwitcher.AddSlot(slot);
-                    ChatNotification.Send(new TranslatableText("commands.blockmixer.addslot", (slot+1)));
-                    
+                else if (!HotbarManager.hotbar[slotId].getState()) {
+                    HotbarManager.EditSlot(slotId, true, 1, true);
+                    SlotStatusRender.CheckToggle();
+                    ChatNotification.Send(new TranslatableText("chat.blockmixer.addslot", slotId+1));
                 }
+
                 else {
-                    SlotSwitcher.RemoveSlot(slot);
-                    ChatNotification.Send(new TranslatableText("commands.blockmixer.removeslot", (slot+1)));
+                    HotbarManager.EditSlot(slotId, false, 1, true);
+                    ChatNotification.Send(new TranslatableText("chat.blockmixer.removeslot", slotId+1));
                 }
+            }
+
+            while (bindIncreaseRatio.wasPressed()) {
+                int slotId =  client.player.getInventory().selectedSlot;
+                int count = HotbarManager.hotbar[slotId].getCount();
+                if (HotbarManager.hotbar[slotId].getState() && count < 10 && !HotbarManager.isOnlyOneInPool()) {
+                    HotbarManager.EditSlot(slotId, true, count+1, false);
+                    ChatNotification.Send(new TranslatableText("chat.blockmixer.increase", slotId+1));
+                }
+                
+            }
+
+            while (bindDecreaseRatio.wasPressed()) {
+                int slotId =  client.player.getInventory().selectedSlot;
+                int count = HotbarManager.hotbar[slotId].getCount();
+                if (HotbarManager.hotbar[slotId].getState() && count > 1) {
+                    HotbarManager.EditSlot(slotId, true, count-1, false);
+                    ChatNotification.Send(new TranslatableText("chat.blockmixer.decrease", slotId+1));
+                }
+
+                
             }
         });
     }

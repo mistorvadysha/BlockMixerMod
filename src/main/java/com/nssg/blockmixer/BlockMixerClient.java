@@ -25,5 +25,8 @@ public class BlockMixerClient implements ClientModInitializer {
         // Commands loading
         BmAddCommand.register(null, false);
         BmClearCommand.register(null, false);
+
+        //
+        HotbarManager.Load();
     }
 }

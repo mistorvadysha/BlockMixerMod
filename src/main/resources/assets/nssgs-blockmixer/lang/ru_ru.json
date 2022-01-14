@@ -1,11 +1,15 @@
 {
     "key.blockmixer.toggleslot": "Переключить слот хотбара",
+    "key.blockmixer.increaseratio": "Изменить соотношение слота: увеличить",
+    "key.blockmixer.decreaseratio": "Изменить соотношение слота: уменьшить",
     
-    "commands.blockmixer.addslot": "Слот %d добавлен",
-    "commands.blockmixer.alreadyaddedslot": "уже добавлен!",
-    "commands.blockmixer.clearslot": "BlockMixer очищен",
-    "commands.blockmixer.removeslot": "Слот %d удалён",
-    "commands.blockmixer.togglebm": "BlockMixer переключён",
+    "chat.blockmixer.addslot": "Слот %d добавлен",
+    "chat.blockmixer.alreadyaddedslot": "уже добавлен!",
+    "chat.blockmixer.clearslot": "BlockMixer очищен",
+    "chat.blockmixer.removeslot": "Слот %d удалён",
+    "chat.blockmixer.togglebm": "BlockMixer переключён",
+    "chat.blockmixer.increase": "Соотношение слота %d увеличено",
+    "chat.blockmixer.decrease": "Соотношение слота %d уменьшено",
 
     "title.blockmixer.config": "Настройки BlockMixer",
     "category.blockmixer.general": "Основные настройки",

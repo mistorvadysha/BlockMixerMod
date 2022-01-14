@@ -10,7 +10,7 @@ import net.minecraft.text.TranslatableText;
 
 public class ModMenuIntegration implements ModMenuApi{
 
-    public String[] modeList = {"Default", "Non-repeating", "Non-repeating [2]"};
+    private String[] modeList = {"Default", "Non-repeating", "Non-repeating [2]"};
 
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {

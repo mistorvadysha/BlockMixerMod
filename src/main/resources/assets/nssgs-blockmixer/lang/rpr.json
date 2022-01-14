@@ -1,11 +1,15 @@
 {
     "key.blockmixer.toggleslot": "Переключить ячейку горячей панели",
+    "key.blockmixer.increaseratio": "Измѣнить соотношенiе ячейки: увеличить",
+    "key.blockmixer.decreaseratio": "Измѣнить соотношенiе ячейки: уменьшить",
     
-    "commands.blockmixer.addslot": "Ячейка %d добавлена",
-    "commands.blockmixer.alreadyaddedslot": "уже добавлена!",
-    "commands.blockmixer.clearslot": "BlockMixer очищенъ",
-    "commands.blockmixer.removeslot": "Ячейка %d удалена",
-    "commands.blockmixer.togglebm": "BlockMixer переключён",
+    "chat.blockmixer.addslot": "Ячейка %d добавлена",
+    "chat.blockmixer.alreadyaddedslot": "уже добавлена!",
+    "chat.blockmixer.clearslot": "BlockMixer очищенъ",
+    "chat.blockmixer.removeslot": "Ячейка %d удалена",
+    "chat.blockmixer.togglebm": "BlockMixer переключён",
+    "chat.blockmixer.increase": "Соотношенiе ячейки %d увеличено",
+    "chat.blockmixer.decrease": "Соотношенiе ячейки %d уменьшено",
 
     "title.blockmixer.config": "Настройки BlockMixer",
     "category.blockmixer.general": "Основные настройки",

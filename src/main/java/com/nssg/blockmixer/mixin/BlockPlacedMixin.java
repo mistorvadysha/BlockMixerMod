@@ -1,6 +1,6 @@
 package com.nssg.blockmixer.mixin;
 
-import com.nssg.blockmixer.SlotSwitcher;
+import com.nssg.blockmixer.HotbarManager;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
@@ -20,6 +21,6 @@ public class BlockPlacedMixin {
 
   @Inject(at = @At ("HEAD"), method = "onPlaced")
   private void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack, CallbackInfo info) {
-    SlotSwitcher.SwtichSlot(placer);
+    HotbarManager.SwitchSlot((PlayerEntity) (Object) placer);
   }
 }

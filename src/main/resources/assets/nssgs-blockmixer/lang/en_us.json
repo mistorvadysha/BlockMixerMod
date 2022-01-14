@@ -1,11 +1,15 @@
 {
     "key.blockmixer.toggleslot": "Toggle hotbar slot",
+    "key.blockmixer.increaseratio": "Change slot ratio: increase",
+    "key.blockmixer.decreaseratio": "Change slot ratio: decrease",
 
-    "commands.blockmixer.addslot": "Added slot %d",
-    "commands.blockmixer.alreadyaddedslot": "is already added!",
-    "commands.blockmixer.clearslot": "BlockMixer now is empty",
-    "commands.blockmixer.removeslot": "Slot %d removed",
-    "commands.blockmixer.togglebm": "BlockMixer toggled",
+    "chat.blockmixer.addslot": "Added slot %d",
+    "chat.blockmixer.alreadyaddedslot": "is already added!",
+    "chat.blockmixer.clearslot": "BlockMixer now is empty",
+    "chat.blockmixer.removeslot": "Slot %d removed",
+    "chat.blockmixer.togglebm": "BlockMixer toggled",
+    "chat.blockmixer.increase": "Slot %d ratio increased",
+    "chat.blockmixer.decrease": "Slot %d ratio decreased",
 
     "title.blockmixer.config": "BlockMixer options",
     "category.blockmixer.general": "Main settings",

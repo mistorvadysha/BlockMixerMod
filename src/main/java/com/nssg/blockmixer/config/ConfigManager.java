@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.nssg.blockmixer.BlockMixerClient;
+import com.nssg.blockmixer.util.Config;
 
 import net.fabricmc.loader.api.FabricLoader;
 

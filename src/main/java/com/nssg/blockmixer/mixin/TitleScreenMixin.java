@@ -1,6 +1,6 @@
 package com.nssg.blockmixer.mixin;
 
-import com.nssg.blockmixer.SlotSwitcher;
+import com.nssg.blockmixer.HotbarManager;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,6 +13,6 @@ import net.minecraft.client.gui.screen.TitleScreen;
 public class TitleScreenMixin{
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        SlotSwitcher.ClearSlots();
+        HotbarManager.ResetHotbar();
     }
 }
