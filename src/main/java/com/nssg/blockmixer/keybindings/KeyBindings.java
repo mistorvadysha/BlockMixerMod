@@ -44,9 +44,11 @@ public class KeyBindings {
                 int slotId =  client.player.getInventory().selectedSlot;
 
                 if (client.player.isSneaking()) {
-                    HotbarManager.toggleMod = !HotbarManager.toggleMod;
-                    SlotStatusRender.CheckToggle();
-                    ChatNotification.Send(new TranslatableText("chat.blockmixer.togglebm"));
+                    if (HotbarManager.hasActiveSlots()) {
+                            HotbarManager.toggleMod = !HotbarManager.toggleMod;
+                            SlotStatusRender.CheckToggle();
+                            ChatNotification.Send(new TranslatableText("chat.blockmixer.togglebm"));
+                    }
                 }
 
                 else if (!HotbarManager.hotbar[slotId].getState()) {
