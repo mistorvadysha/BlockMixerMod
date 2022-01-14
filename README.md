@@ -10,10 +10,10 @@ This mod is designed to ease the building process.
 After you put the block, the mod chooses a random slot from BlockMixer's binded slots and automatically switches your character's selection to it.
 
 **Requirements**
-- [Fabric](https://fabricmc.net/use/installer/) `Required`
-- [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files) `Required`
-- [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files) `Optional`
-- [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/files) `Optional`
+- `Required` [Fabric](https://fabricmc.net/use/installer/)
+- `Required` [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files)
+- `Optional` [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files)
+- `Optional` [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/files)
 
 ## Features
 - Different mixing modes:  
