@@ -10,9 +10,10 @@ This mod is designed to ease the building process.
 After you put the block, the mod chooses a random slot from BlockMixer's binded slots and automatically switches your character's selection to it.
 
 **Requirements**
-- [Fabric](https://fabricmc.net/use/installer/) for Minecraft 1.18.X
-- [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files) 0.44.0+1.18 +
-- [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files) v6.1.48 +
+- `Required` [Fabric](https://fabricmc.net/use/installer/)
+- `Required` [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files)
+- `Optional` [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files)
+- `Optional` [Mod Menu](https://www.curseforge.com/minecraft/mc-mods/modmenu/files)
 
 ## Features
 - Different mixing modes:  
@@ -21,9 +22,9 @@ After you put the block, the mod chooses a random slot from BlockMixer's binded 
 ## How to use
 
 **Basic usage**  
-To bind and to unbind and unbind a slot to BlockMixer click `B`. The binded slot will be highlighted with a green indicator.
+To bind and unbind a slot to BlockMixer click `B`. The binded slot will be highlighted with a green indicator.
 
 **"Toggle Mod" option**  
-This option is for disable mod without cleaning BlockMixer's binded slots. To toggle mod press "Sneak" button (`Shift` by default)  + "Toggle hotbar slot" button (`B` by default), `Shift+B`. All binded slot will be highlighted with a green indicator.
+This option is for stopping mod without cleaning BlockMixer's binded slots. To toggle mod press "Sneak" button (`Shift` by default)  + "Toggle hotbar slot" button (`B` by default), `Shift+B`. All binded slots will be highlighted with a red indicator.
 
 <img src="./media/indguide.png" width="512">
