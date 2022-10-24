@@ -1,10 +1,5 @@
 package com.nssg.blockmixer;
-
-
 import java.io.IOException;
-
-import com.nssg.blockmixer.command.BmAddCommand;
-import com.nssg.blockmixer.command.BmClearCommand;
 import com.nssg.blockmixer.config.ConfigManager;
 import com.nssg.blockmixer.keybindings.KeyBindings;
 
@@ -21,10 +16,6 @@ public class BlockMixerClient implements ClientModInitializer {
 
         // Key bindings loading
         KeyBindings.register();
-
-        // Commands loading
-        BmAddCommand.register(null, false);
-        BmClearCommand.register(null, false);
 
         //
         HotbarManager.Load();

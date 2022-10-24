@@ -10,7 +10,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 
 public class KeyBindings {
     private static KeyBinding bindToggleSlot;
@@ -47,19 +47,19 @@ public class KeyBindings {
                     if (HotbarManager.hasActiveSlots()) {
                             HotbarManager.toggleMod = !HotbarManager.toggleMod;
                             SlotStatusRender.CheckToggle();
-                            ChatNotification.Send(new TranslatableText("chat.blockmixer.togglebm"));
+                            ChatNotification.Send(Text.translatable("chat.blockmixer.togglebm"));
                     }
                 }
 
                 else if (!HotbarManager.hotbar[slotId].getState()) {
                     HotbarManager.EditSlot(slotId, true, 1, true);
                     SlotStatusRender.CheckToggle();
-                    ChatNotification.Send(new TranslatableText("chat.blockmixer.addslot", slotId+1));
+                    ChatNotification.Send(Text.translatable("chat.blockmixer.addslot", slotId+1));
                 }
 
                 else {
                     HotbarManager.EditSlot(slotId, false, 1, true);
-                    ChatNotification.Send(new TranslatableText("chat.blockmixer.removeslot", slotId+1));
+                    ChatNotification.Send(Text.translatable("chat.blockmixer.removeslot", slotId+1));
                 }
             }
 
@@ -68,7 +68,7 @@ public class KeyBindings {
                 int count = HotbarManager.hotbar[slotId].getCount();
                 if (HotbarManager.hotbar[slotId].getState() && count < 10 && !HotbarManager.isOnlyOneInPool()) {
                     HotbarManager.EditSlot(slotId, true, count+1, false);
-                    ChatNotification.Send(new TranslatableText("chat.blockmixer.increase", slotId+1));
+                    ChatNotification.Send(Text.translatable("chat.blockmixer.increase", slotId+1));
                 }
                 
             }
@@ -78,7 +78,7 @@ public class KeyBindings {
                 int count = HotbarManager.hotbar[slotId].getCount();
                 if (HotbarManager.hotbar[slotId].getState() && count > 1) {
                     HotbarManager.EditSlot(slotId, true, count-1, false);
-                    ChatNotification.Send(new TranslatableText("chat.blockmixer.decrease", slotId+1));
+                    ChatNotification.Send(Text.translatable("chat.blockmixer.decrease", slotId+1));
                 }
 
                 

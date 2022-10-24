@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.nssg.blockmixer.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": ["BlockPlacedMixin", "TitleScreenMixin", "IndicatorRenderMixin"],
   "injectors": {
     "defaultRequire": 1

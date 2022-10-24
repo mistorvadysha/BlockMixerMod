@@ -6,7 +6,7 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 
 public class ModMenuIntegration implements ModMenuApi{
 
@@ -18,7 +18,7 @@ public class ModMenuIntegration implements ModMenuApi{
             ConfigBuilder builder = ConfigBuilder
                 .create()
                 .setParentScreen(null)
-                .setTitle(new TranslatableText("title.blockmixer.config"));
+                .setTitle(Text.translatable("title.blockmixer.config"));
 
             builder.setSavingRunnable(() -> {
                 ConfigManager.Save();
@@ -27,15 +27,15 @@ public class ModMenuIntegration implements ModMenuApi{
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
             ConfigCategory general = builder
-                .getOrCreateCategory(new TranslatableText("category.blockmixer.general"))
+                .getOrCreateCategory(Text.translatable("category.blockmixer.general"))
 
-                .addEntry(entryBuilder.startSelector(new TranslatableText("option.blockmixer.mixmode"), modeList, ConfigManager.config.getMixMode())
+                .addEntry(entryBuilder.startSelector(Text.translatable("option.blockmixer.mixmode"), modeList, ConfigManager.config.getMixMode())
                 .setDefaultValue("Default")
-                .setTooltip(new TranslatableText("option.blockmixer.mixmode.tooltip"))
+                .setTooltip(Text.translatable("option.blockmixer.mixmode.tooltip"))
                 .setSaveConsumer(newValue -> ConfigManager.config.setMixMode(newValue))
                 .build())
 
-                .addEntry(entryBuilder.startBooleanToggle(new TranslatableText("option.blockmixer.chatnotifications"), ConfigManager.config.getChatNotifications())
+                .addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.blockmixer.chatnotifications"), ConfigManager.config.getChatNotifications())
                 .setDefaultValue(false)
                 .setSaveConsumer(newValue -> ConfigManager.config.setChatNotifications(newValue))
                 .build());
