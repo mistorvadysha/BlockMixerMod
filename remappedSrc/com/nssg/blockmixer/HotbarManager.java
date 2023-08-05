@@ -82,7 +82,7 @@ public class HotbarManager {
     }
 
     public static void SwitchSlot(PlayerEntity player) {
-        if (toggleMod == true && player.getWorld().toString() == "ClientLevel") {
+        if (toggleMod == true && player.method_48926().toString() == "ClientLevel") {
             String settingMixMode = ConfigManager.config.getMixMode();
 
             int slotsPoolSize = slotsPool.size();

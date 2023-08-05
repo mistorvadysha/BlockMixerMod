@@ -4,6 +4,7 @@ import com.nssg.blockmixer.config.ConfigManager;
 import com.nssg.blockmixer.keybindings.KeyBindings;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 
 public class BlockMixerClient implements ClientModInitializer {
 
@@ -19,5 +20,9 @@ public class BlockMixerClient implements ClientModInitializer {
 
         //
         HotbarManager.Load();
+
+        HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {
+            SlotStatusRender.RenderIndicators(drawContext);
+        });
     }
 }

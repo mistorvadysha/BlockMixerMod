@@ -3,9 +3,8 @@ package com.nssg.blockmixer;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.gui.DrawContext;
 
 public class SlotStatusRender {
     private static final Identifier TEXTURE_INDICATOR = new Identifier(BlockMixerClient.MOD_ID, "textures/indicators.png");
@@ -33,33 +32,39 @@ public class SlotStatusRender {
 		else { return false; }
 	}
 
-	public static void RenderIndicators(MatrixStack matrixStack) {
+	
+	public static void RenderIndicators(DrawContext drawContext) {
 		windowX = MinecraftClient.getInstance().getWindow().getScaledWidth();
 		windowY = MinecraftClient.getInstance().getWindow().getScaledHeight();
 
 		for (int slotId=0; slotId<9; slotId++){
 
 			if (HotbarManager.hotbar[slotId].getState()) {
-				RenderSystem.setShaderTexture(0, TEXTURE_INDICATOR);
-				
+
 				RenderSystem.enableBlend();
 				RenderSystem.disableDepthTest();
-
-				InGameHud.drawTexture(matrixStack, 
-					windowX/2-res/2-3+slotPos[slotId], windowY-18, 0, 
+				
+				drawContext.drawTexture(
+					TEXTURE_INDICATOR,
+					windowX/2-res/2-3+slotPos[slotId], windowY-18,
+					res, res,
 					offset, 0,
 					res, res,
-					16, 8);
+					16, 8
+				);
 
 				if (HotbarManager.hasCountIncreased() && !HotbarManager.isOnlyOneInPool()) {
 					if (HotbarManager.hotbar[slotId].getCount() != 10) { countindX = 6; }
 					else { countindX = 12; }
-					RenderSystem.setShaderTexture(0, TEXTURE_COUNTINDICATOR);
-					InGameHud.drawTexture(matrixStack, 
-						windowX/2-8+slotPos[slotId], windowY-19, 0, 
+
+					drawContext.drawTexture(
+						TEXTURE_COUNTINDICATOR,
+						windowX/2-8+slotPos[slotId], windowY-19,
+						countindX, countindY,
 						countindOffset[HotbarManager.hotbar[slotId].getCount()-1], 0,
 						countindX, countindY,
-						72, 8);
+						72, 8
+					);
 				}
 				RenderSystem.disableBlend();
 				RenderSystem.enableDepthTest();
