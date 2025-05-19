@@ -109,7 +109,7 @@ public class HotbarManager {
                 default:
                     break;
             }
-            player.getInventory().selectedSlot = slotId;
+            player.getInventory().setSelectedSlot(slotId);
             
             lastSlots[1] = lastSlots[0];
             lastSlots[0] = slotId;

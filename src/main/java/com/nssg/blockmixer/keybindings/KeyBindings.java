@@ -1,7 +1,7 @@
 package com.nssg.blockmixer.keybindings;
 
 import com.nssg.blockmixer.HotbarManager;
-import com.nssg.blockmixer.SlotStatusRender;
+import com.nssg.blockmixer.SlotStatusRenderV2;
 import com.nssg.blockmixer.util.ChatNotification;
 
 import org.lwjgl.glfw.GLFW;
@@ -41,19 +41,20 @@ public class KeyBindings {
         
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (bindToggleSlot.wasPressed()) {
-                int slotId =  client.player.getInventory().selectedSlot;
+                int slotId =  client.player.getInventory().getSelectedSlot();
 
                 if (client.player.isSneaking()) {
                     if (HotbarManager.hasActiveSlots()) {
                             HotbarManager.toggleMod = !HotbarManager.toggleMod;
-                            SlotStatusRender.CheckToggle();
+                            // SlotStatusRender.CheckToggle();
+                            SlotStatusRenderV2.CheckToggle();
                             ChatNotification.Send(Text.translatable("chat.blockmixer.togglebm"));
                     }
                 }
 
                 else if (!HotbarManager.hotbar[slotId].getState()) {
                     HotbarManager.EditSlot(slotId, true, 1, true);
-                    SlotStatusRender.CheckToggle();
+                    SlotStatusRenderV2.CheckToggle();
                     ChatNotification.Send(Text.translatable("chat.blockmixer.addslot", slotId+1));
                 }
 
@@ -64,7 +65,7 @@ public class KeyBindings {
             }
 
             while (bindIncreaseRatio.wasPressed()) {
-                int slotId =  client.player.getInventory().selectedSlot;
+                int slotId =  client.player.getInventory().getSelectedSlot();
                 int count = HotbarManager.hotbar[slotId].getCount();
                 if (HotbarManager.hotbar[slotId].getState() && count < 10 && !HotbarManager.isOnlyOneInPool()) {
                     HotbarManager.EditSlot(slotId, true, count+1, false);
@@ -74,7 +75,7 @@ public class KeyBindings {
             }
 
             while (bindDecreaseRatio.wasPressed()) {
-                int slotId =  client.player.getInventory().selectedSlot;
+                int slotId =  client.player.getInventory().getSelectedSlot();
                 int count = HotbarManager.hotbar[slotId].getCount();
                 if (HotbarManager.hotbar[slotId].getState() && count > 1) {
                     HotbarManager.EditSlot(slotId, true, count-1, false);
